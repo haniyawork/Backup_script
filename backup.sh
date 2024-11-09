@@ -1,3 +1,4 @@
 #! /usr/bin/bash
-#tar -zcvf /var/backups/backuparc.tgz /home/
-rsync -av --progress /home/ /var/backups/dataBackup$(date +%Y%m%d_%T)
+cd /home/hani
+tar -zcvf dataBackup$(date +%Y%m%d_%T).tgz mydata/
+rsync -ar /mydata John@$(ip_address):/home/backups
